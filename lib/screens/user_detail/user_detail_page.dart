@@ -178,14 +178,14 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                 const SizedBox(height: 10),
                 Row(
                   children: [
-                    Expanded(
-                      child: const CustomText(
+                    const Expanded(
+                      child: CustomText(
                         "Catatan Kolega",
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    IconButton(onPressed: () => {}, icon: Icon(Icons.add))
+                    IconButton(onPressed: () => {}, icon: const Icon(Icons.add))
                   ],
                 ),
                 Card(

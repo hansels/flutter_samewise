@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_samewise/basics/widgets/core_stateful_widget.dart';
-import 'package:flutter_samewise/configs/configs.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
 class ActivityDetailPage extends CoreStatefulWidget {

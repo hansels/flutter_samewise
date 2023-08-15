@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_samewise/basics/screens/base_screen.dart';
 import 'package:flutter_samewise/basics/screens/base_screen_with_app_bar.dart';
 import 'package:flutter_samewise/constants/page_name.dart';
 import 'package:flutter_samewise/screens/activity_details/activity_detail_page.dart';
