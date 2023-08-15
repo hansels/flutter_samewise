@@ -3,12 +3,14 @@ import 'package:flutter_samewise/constants/page_name.dart';
 import 'package:flutter_samewise/functions/enum_parser.dart';
 import 'package:flutter_samewise/functions/loading_function.dart';
 import 'package:flutter_samewise/interfaces/i_route_configuration.dart';
+import 'package:flutter_samewise/screens/activity_details/activity_detail_screen_route_configuration.dart';
 import 'package:flutter_samewise/screens/home/home_screen_route_configuration.dart';
 import 'package:flutter_samewise/widgets/builder/future_use.dart';
 
 class Routes {
   static List<IRouteConfiguration> listRoute = [
     HomeScreenRouteConfiguration(),
+    ActivityDetailScreenRouteConfiguration(),
   ];
 
   static Future<T?> pushAndRemoveUntil<T>(

@@ -45,6 +45,18 @@ class Configs {
     horizontal: Configs.screenPadding,
   );
 
+  static const colorAvatars = [
+    Color.fromRGBO(30, 144, 255, 1),
+    Color.fromRGBO(0, 255, 127, 1),
+    Color.fromRGBO(255, 131, 98, 1),
+    Color.fromRGBO(255, 69, 0, 1),
+    Color.fromRGBO(138, 43, 226, 1),
+    Color.fromRGBO(178, 34, 34, 1),
+    Color.fromRGBO(139, 196, 191, 1),
+    Color.fromRGBO(95, 158, 160, 1),
+    Color.fromRGBO(224, 30, 90, 1),
+  ];
+
   static const EdgeInsets topLeftRightEdgeInsets = EdgeInsets.only(
     left: Configs.screenPadding,
     right: Configs.screenPadding,
