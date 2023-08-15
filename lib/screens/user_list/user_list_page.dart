@@ -5,72 +5,59 @@ import 'package:flutter_samewise/constants/page_name.dart';
 import 'package:flutter_samewise/functions/routes.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
-class HomePage extends CoreStatefulWidget {
-  const HomePage({super.key});
+class UserListPage extends CoreStatefulWidget {
+  const UserListPage({super.key});
 
   @override
-  CoreStatefulWidgetState<HomePage> createState() => _HomePageState();
+  CoreStatefulWidgetState<UserListPage> createState() => _HomePageState();
 }
 
-class _HomePageState extends CoreStatefulWidgetState<HomePage> {
+class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
   List<Map<String, dynamic>> list = [
     {
       "person": "Budi Suwanto",
-      "event": "Ucapan: Ulang Tahun",
-      "due": "16 Agustus 2023",
+      "job": "Chief Executive Officer",
+      "birthday": "16 Agustus 1985",
       "priority": 3
     },
     {
       "person": "Joko Subianto",
-      "event": "Ucapan: Ulang Tahun",
-      "due": "16 Agustus 2023",
+      "job": "Chief Technology Officer",
+      "birthday": "16 Agustus 1981",
       "priority": 2
     },
     {
       "person": "Hana Bang",
-      "event": "Kirim: Parsel Selamat Sukses",
-      "due": "16 Agustus 2023",
+      "job": "Head of Human Resource",
+      "birthday": "20 Juni 1988",
       "priority": 2
     },
     {
       "person": "Susi Sunarto",
-      "event": "Ucapan: Semoga Lekas Sembuh",
-      "due": "16 Agustus 2023",
+      "job": "Lead Developer",
+      "birthday": "05 Juni 1992",
       "priority": 1
     },
     {
       "person": "Budi Santo",
-      "event": "Tanya: Kelahiran Bayi",
-      "due": "16 Agustus 2023",
+      "job": "Team Lead",
+      "birthday": "20 Januari 1998",
       "priority": 1
     },
     {
       "person": "Rita Purba",
-      "event": "Kirim: Benefit Nasabah",
-      "due": "16 Agustus 2023",
+      "job": "Entrepreneur",
+      "birthday": "16 Juli 1999",
       "priority": 1
     },
-    {
-      "person": "Budi Suwanto",
-      "event": "Ucapan: Lekas Sembuh",
-      "due": "17 Agustus 2023",
-      "priority": 3
-    },
-    {
-      "person": "Joko Subianto",
-      "event": "Ucapan: Anak Melahirkan",
-      "due": "18 Agustus 2023",
-      "priority": 2
-    },
   ];
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 8.0,
+            horizontal: 12.0,
             vertical: 10.0,
           ),
           child: SingleChildScrollView(
@@ -80,30 +67,51 @@ class _HomePageState extends CoreStatefulWidgetState<HomePage> {
                 Container(
                   height: 10,
                 ),
-                InkWell(
-                  onTap: () => Routes.push(context, PageName.UserList),
-                  child: SizedBox(
-                    height: 150,
-                    child: Image.asset(
-                      "assets/SameWise_16_9.png",
-                      fit: BoxFit.cover,
+                Container(
+                  height: 10,
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      height: 150,
+                      child: Image.asset(
+                        "assets/sam.png",
+                        fit: BoxFit.cover,
+                      ),
                     ),
-                  ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 120.0),
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              bottomRight: Radius.circular(25),
+                              topLeft: Radius.circular(25),
+                              topRight: Radius.circular(25),
+                            ),
+                            color: Color.fromARGB(255, 116, 63, 63),
+                          ),
+                          child: const Padding(
+                            padding: EdgeInsets.all(12),
+                            child: CustomText(
+                              "Berikut merupakan daftar customermu.",
+                              color: Colors.white,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 const CustomText(
                   textAlign: TextAlign.left,
-                  "Welcome to SameWISE",
+                  "Daftar Pengguna",
                   fontSize: 24,
                 ),
-                Container(
-                  height: 8,
-                ),
-                const CustomText(
-                  "Today's List of Activities",
-                  fontSize: 16,
-                ),
-                Container(
-                  height: 12,
+                const SizedBox(
+                  height: 10,
                 ),
                 ListView.builder(
                   shrinkWrap: true,
@@ -121,7 +129,7 @@ class _HomePageState extends CoreStatefulWidgetState<HomePage> {
                       onTap: () async {
                         Routes.push(
                           context,
-                          PageName.ActivityDetail,
+                          PageName.UserDetail,
                         );
                       },
                       child: Card(
@@ -163,12 +171,18 @@ class _HomePageState extends CoreStatefulWidgetState<HomePage> {
                                   children: [
                                     Container(height: 5),
                                     CustomText(
-                                      "${list[i]['event']} ${list[i]['person']}",
+                                      "${list[i]['person']}",
                                       fontSize: 15,
+                                      fontWeight: FontWeight.bold,
                                     ),
-                                    Container(height: 10),
+                                    Container(height: 5),
                                     CustomText(
-                                      "${list[i]['due']}",
+                                      "${list[i]['job']}",
+                                      fontSize: 12,
+                                    ),
+                                    Container(height: 5),
+                                    CustomText(
+                                      "${list[i]['birthday']}",
                                       fontSize: 12,
                                     ),
                                     Container(height: 5),
@@ -181,7 +195,10 @@ class _HomePageState extends CoreStatefulWidgetState<HomePage> {
                       ),
                     );
                   },
-                )
+                ),
+                Container(
+                  height: 20,
+                ),
               ],
             ),
           ),

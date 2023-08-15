@@ -1,27 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_samewise/basics/screens/base_screen.dart';
 import 'package:flutter_samewise/basics/screens/base_screen_with_app_bar.dart';
 import 'package:flutter_samewise/constants/page_name.dart';
-import 'package:flutter_samewise/screens/activity_details/activity_detail_page.dart';
+import 'package:flutter_samewise/screens/user_list/user_list_page.dart';
 // import 'package:flutter_samewise/widgets/home_drawer.dart';
 
-class ActivityDetailScreen extends BaseScreenWithAppBar {
-  const ActivityDetailScreen({super.key})
+class UserListScreen extends BaseScreenWithAppBar {
+  const UserListScreen({super.key})
       : super(
-          PageName.ActivityDetail,
+          PageName.UserList,
           padding: EdgeInsets.zero,
           scrollable: false,
         );
 
   @override
   Widget content(BuildContext context) {
-    return const ActivityDetailPage();
+    return const UserListPage();
   }
-
-  // @override
-  // Widget? drawer(BuildContext context) {
-  //   return const HomeDrawer(selected: PageName.Home);
-  // }
 
   @override
   Widget? bottomNavigationBar(BuildContext context) {

@@ -5,12 +5,16 @@ import 'package:flutter_samewise/functions/loading_function.dart';
 import 'package:flutter_samewise/interfaces/i_route_configuration.dart';
 import 'package:flutter_samewise/screens/activity_details/activity_detail_screen_route_configuration.dart';
 import 'package:flutter_samewise/screens/home/home_screen_route_configuration.dart';
+import 'package:flutter_samewise/screens/user_detail/user_detail_screen_route_configuration.dart';
+import 'package:flutter_samewise/screens/user_list/user_list_screen_route_configuration.dart';
 import 'package:flutter_samewise/widgets/builder/future_use.dart';
 
 class Routes {
   static List<IRouteConfiguration> listRoute = [
     HomeScreenRouteConfiguration(),
     ActivityDetailScreenRouteConfiguration(),
+    UserListScreenRouteConfiguration(),
+    UserDetailScreenRouteConfiguration(),
   ];
 
   static Future<T?> pushAndRemoveUntil<T>(
