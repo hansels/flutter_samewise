@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Configs {
-  static String appName = "PAKKJ";
-
-  static String httpLink = "https://api.pakkj.app";
-  static String chatLink = "https://chat.pakkj.app";
+  static String appName = "SamWISE";
 
   //Colors for theme
   static const primaryColor = Color.fromRGBO(36, 35, 94, 1);
