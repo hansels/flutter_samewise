@@ -114,7 +114,7 @@ class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
                           height: 8,
                         ),
                         const CustomText(
-                          "Berikut Beberapa Benefit yang mungkin cocok untuk Budi:\n\n1. Gift Card : Gift Card untuk Budi merayakan pesta ulang tahunnya bersama keluarga mungkin dapat menjadi pertimbangan untuk benefit yang layak\n\n2. Personalized Gifts : Dengan melihat sejarah Budi, karena Budi memiliki hobi bermain tennis, hadiah berupa raket tennis, ataupun seperangkat alat tenis dapat diberikan kepada Budi.",
+                          "Berikut Beberapa Benefit yang mungkin cocok untuk Budi:\n\n1. Gift Card : Gift Card untuk Budi merayakan pesta ulang tahunnya bersama keluarga mungkin dapat menjadi pertimbangan untuk benefit yang layak\n\n2. Personalized Gifts : Dengan melihat sejarah Budi, karena Budi memiliki hobi bermain tennis, hadiah berupa raket tennis merk Wilson, ataupun seperangkat alat tenis (raket dan bola) dapat diberikan kepada Budi.",
                           fontSize: 14,
                         ),
                         Container(

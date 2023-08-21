@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Configs {
-  static String appName = "SamWISE";
+  static String appName = "SameWISE";
 
   //Colors for theme
   static const primaryColor = Color.fromRGBO(36, 35, 94, 1);
