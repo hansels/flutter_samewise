@@ -1,0 +1,163 @@
+{
+    "customers": [
+        {
+            "id": "1",
+            "name": "Michael Anggoro",
+            "job": "Web Developer",
+            "level": 2,
+            "birthDate": "31 Maret 1998",
+            "education": "S1",
+            "email": "michael@anggoro.com",
+            "telephone": "08123456",
+            "assets": [
+                "Motor Vario"
+            ],
+            "notes": [
+                "Sangat Bergaya dan Tampil dengan Stylish",
+                "Suka menggunakan barang-barang mewah dan glamor",
+                "Hobi Bermain game online",
+                "Rela mengeluarkan uang untuk skin karakter game nya"
+            ]
+        },
+        {
+            "name": "Amanda Putri",
+            "id": "2",
+            "job": "Dokter Gigi",
+            "level": 3,
+            "birthDate": "31 Maret 1998",
+            "education": "S1",
+            "email": "amanda@putri.com",
+            "telephone": "08123456",
+            "assets": [
+                "Koleksi Lukisan Antik",
+                "Apartemen Pusat Kota",
+                "Mobil Mini Cooper keluaran 2015"
+            ],
+            "notes": [
+                "Hobi membaca dan bermain gitar di sela waktu",
+                "Memiliki 1 anak dan 1 hewan peliharaan",
+                "Mempersiapkan anak untuk persiapan dana kuliah",
+                "Suka melakukan investasi jangka panjang"
+            ]
+        },
+        {
+            "name": "Tsutsumi Chiyoko",
+            "id": "3",
+            "job": "Chef",
+            "level": 2,
+            "birthDate": "14 Januari 1965",
+            "education": "Le Cordon Bleu, Prancis",
+            "email": "tsutsumi@chiyoko.com",
+            "telephone": "08123456",
+            "assets": [
+                "Restoran Bali Bintang 5",
+                "Vila Bali ",
+                "Pisau Langka keluaran jepang"
+            ],
+            "notes": [
+                "Bercita cita untuk  travelling beberapa negara untuk mempelajari hidangan khas negara dunia",
+                "Memiliki sifat perfeksionis ",
+                "Kurang suka tempat yang panas (Outdoor)",
+                "Bercita-cita membangun restoran sendiri di pantai di Bali"
+            ]
+        },
+        {
+            "name": "Izaak Cahyono",
+            "id": "4",
+            "level": 1,
+            "job": "Mahasiswa ",
+            "birthDate": "19 Juni 2002",
+            "education": "S1",
+            "email": "izaak@cahyono.com",
+            "telephone": "08123456",
+            "assets": [
+                "Motor Vario Keluaran 2013"
+            ],
+            "notes": [
+                "Memiliki Sambilan Pekerjaan Online Shop Jualan Tekstil",
+                "Suka melakukan Community Service ke Panti Asuhan",
+                "Lebih Suka dikontak pagi hari jam 8"
+            ]
+        },
+        {
+            "name": "Toni Widjaja",
+            "id": "5",
+            "level": 1,
+            "job": "Musisi Jazz",
+            "birthDate": "07 Mei 1992",
+            "education": "S1",
+            "email": "toni@widjaja.com",
+            "telephone": "08123456",
+            "assets": [
+                "Studio Rekaman Pribadi",
+                "Koleksi Album Jazz"
+            ],
+            "notes": [
+                "Memiliki penghasilan tambahan dari Youtube",
+                "senang melakukan kegiatan sukarelawan",
+                "Punya alat DJ dan Saxophone sendiri"
+            ]
+        },
+        {
+            "name": "Wilson Pranaya",
+            "id": "6",
+            "level": 1,
+            "job": "CTO Startup",
+            "birthDate": "07 Maret 1983",
+            "education": "S1 Teknik Informatika ITB",
+            "email": "wilson@pranaya.com",
+            "telephone": "08123456",
+            "assets": [
+                "Koleksi Motor Harley",
+                "Koleksi Mobil Mini Cooper",
+                "Koleksi Sepatu keluaran terbaru"
+            ],
+            "notes": [
+                "Membenci sistem yang bertele tele",
+                "Memiliki pemahaman matematis yang tinggi",
+                "Hanya dapat dihubungi pukul 19:00 sampai 21:00"
+            ]
+        },
+        {
+            "name": "Faisal Rahman",
+            "id": "7",
+            "level": 2,
+            "job": "Penulis Novel",
+            "birthDate": "06 Desember 1990",
+            "education": "S1 Sastra Indonesia",
+            "email": "faisal@rahman.com",
+            "telephone": "08123456",
+            "assets": [
+                "Rumah Pedesaan",
+                "Koleksi Buku langka",
+                "Kamera DSLR Vintage"
+            ],
+            "notes": [
+                " Menulis Kolaborasi Novel dengan penulsi ternama di Indonesia",
+                "Memiliki karya novel yang sudah dibaca oleh jutaan orang",
+                "Memiliki pekerjaan sampingan sebagai fotografer acara penting"
+            ]
+        },
+        {
+            "name": "Robert Wijayanto",
+            "id": "8",
+            "level": 3,
+            "job": "Arsitek",
+            "birthDate": "15 April 1985",
+            "education": "S1 Arsitektur",
+            "email": "robert@wijayanto.com",
+            "telephone": "08123456",
+            "assets": [
+                "Rumah Futuristik hasil karyanya",
+                "Kendaraan Off road",
+                "Koleksi Lukisan"
+            ],
+            "notes": [
+                "Mengoleksi kendaraan off road ",
+                "Mengoptimalkan bahan bangunan dalam karyanya",
+                "Melihat segala sesuatu berkaitan dengan alam",
+                "Menyukai game genshin impact"
+            ]
+        }
+    ]
+}

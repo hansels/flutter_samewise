@@ -2,13 +2,21 @@ class Customer {
   final String? id;
   String name;
   String? job;
+  String? education;
+  String? email;
+  String? telephone;
   String? birthday;
+  List<String>? notes;
   int? level;
 
   Customer({
     this.id,
     this.job,
+    this.email,
+    this.telephone,
+    this.education,
     this.birthday,
+    this.notes,
     required this.name,
     this.level = 1,
   });
@@ -17,7 +25,11 @@ class Customer {
       : this(
           id: customer.id,
           job: customer.job,
+          education: customer.education,
+          email: customer.email,
+          telephone: customer.telephone,
           birthday: customer.birthday,
+          notes: customer.notes,
           name: customer.name,
           level: customer.level,
         );
@@ -28,7 +40,11 @@ class Customer {
         : Customer(
             id: data["id"] ?? "",
             job: data["job"] ?? "",
-            birthday: data["birthday"] ?? "",
+            education: data["education"] ?? "",
+            email: data["email"] ?? "",
+            telephone: data["telephone"] ?? "",
+            notes: toListString(data["notes"]) ?? [],
+            birthday: data["birthDate"] ?? "",
             name: data["name"] ?? "",
             level: data["level"] ?? 1,
           );

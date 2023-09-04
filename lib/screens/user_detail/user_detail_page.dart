@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_samewise/basics/widgets/core_stateful_widget.dart';
-import 'package:flutter_samewise/configs/configs.dart';
 import 'package:flutter_samewise/models/customer.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
@@ -14,13 +13,6 @@ class UserDetailPage extends CoreStatefulWidget {
 }
 
 class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
-  // Map<String, dynamic> data = {
-  //   "person": "Budi Suwanto",
-  //   "job": "Chief Executive Officer",
-  //   "birthday": "16 Agustus 1985",
-  //   "priority": 3,
-  // };
-
   @override
   void initState() {
     super.initState();
@@ -37,6 +29,8 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
         : widget.customer.level == 2
             ? const Color.fromARGB(255, 192, 192, 192)
             : Colors.transparent;
+
+    var kontent = widget.customer.notes?.join("\n\n");
 
     return SingleChildScrollView(
       child: Column(
@@ -112,26 +106,54 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                     padding: const EdgeInsets.all(15.0),
                     child: Column(
                       children: [
-                        const Row(
+                        Row(
                           children: [
                             Icon(Icons.email, size: 24),
                             SizedBox(width: 10),
                             CustomText(
-                              "budi@suwanto.com",
+                              widget.customer.email ?? "",
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
                             ),
                           ],
                         ),
                         const SizedBox(height: 15),
-                        const Row(
+                        Row(
                           children: [
                             Icon(Icons.phone, size: 24),
                             SizedBox(width: 10),
                             CustomText(
-                              "08123456789",
+                              widget.customer.telephone ?? "",
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 15),
+                        Row(
+                          children: [
+                            const Icon(Icons.work, size: 24),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: CustomText(
+                                "${widget.customer.job}",
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 15),
+                        Row(
+                          children: [
+                            const Icon(Icons.school, size: 24),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: CustomText(
+                                "${widget.customer.education}",
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ],
                         ),
@@ -197,10 +219,11 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   elevation: 2,
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(15.0),
                     child: CustomText(
-                      "1. Beliau memiliki 3 orang anak, benefit untuk anaknya akan sangat membantu bagi beliau.\n\n2. Beliau suka bermain golf.\n\n3. Beliau Selalu menyukai Titleist.\n\n4. CEO tidak suka dibuang waktu, jangan bertele-tele.\n\n5. Sebagai CEO, beliau tidak memiliki banyak waktu, penawaran yang membantu mempercepat proses transaksi.",
+                      kontent ?? "",
+                      //"1. Beliau memiliki 3 orang anak, benefit untuk anaknya akan sangat membantu bagi beliau.\n\n2. Beliau suka bermain golf.\n\n3. Beliau Selalu menyukai Titleist.\n\n4. CEO tidak suka dibuang waktu, jangan bertele-tele.\n\n5. Sebagai CEO, beliau tidak memiliki banyak waktu, penawaran yang membantu mempercepat proses transaksi.",
                       fontSize: 14,
                     ),
                   ),

@@ -113,7 +113,7 @@ class TokenVersion {
   }
 
   static Future<List<Customer?>> getCustomers() async {
-    var act = await instance._sharedPreferencesHelper.getValue('activities');
+    var act = await instance._sharedPreferencesHelper.getValue('customers');
     if (act == null) {
       var file = await loadJsonFromAssets('assets/customers.json');
       instance._sharedPreferencesHelper

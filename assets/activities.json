@@ -3,9 +3,9 @@
         {
             "name": "Ucapan",
             "customer": {
-                "name": "Budi Suwanto",
+                "name": "Michael Anggoro",
                 "id": "1",
-                "level": 3
+                "level": 2
             },
             "date": "14 Agustus 2023",
             "description": "Ulang Tahun",
@@ -14,9 +14,9 @@
         {
             "name": "Ucapan",
             "customer": {
-                "name": "Joko Subianto",
+                "name": "Amanda Putri",
                 "id": "2",
-                "level": 2
+                "level": 3
             },
             "date": "15 Agustus 2023",
             "description": "Selamat Kelahiran Anak",
@@ -25,7 +25,7 @@
         {
             "name": "Kirim",
             "customer": {
-                "name": "Susi Suwan",
+                "name": "Tsutsumi Chiyoko",
                 "id": "3",
                 "level": 2
             },
@@ -36,7 +36,7 @@
         {
             "name": "Ucapan",
             "customer": {
-                "name": "Rudi Sunarto",
+                "name": "Izaak Cahyono",
                 "id": "4",
                 "level": 1
             },
@@ -47,7 +47,7 @@
         {
             "name": "Ucapan",
             "customer": {
-                "name": "Budi Santo",
+                "name": "Toni Widjaja",
                 "id": "5",
                 "level": 1
             },
@@ -58,7 +58,7 @@
         {
             "name": "Kirim",
             "customer": {
-                "name": "Rita Purba",
+                "name": "Wilson Pranaya",
                 "id": "6",
                 "level": 1
             },
@@ -69,9 +69,9 @@
         {
             "name": "Ucapan",
             "customer": {
-                "name": "Budi Suwanto",
+                "name": "Faisal Rahman",
                 "id": "7",
-                "level": 3
+                "level": 2
             },
             "date": "16 Agustus 2023",
             "description": "Lekas Sembuh",
@@ -80,9 +80,9 @@
         {
             "name": "Ucapan",
             "customer": {
-                "name": "Joko Subianto",
+                "name": "Robert Wijayanto",
                 "id": "8",
-                "level": 2
+                "level": 3
             },
             "date": "17 Agustus 2023",
             "description": "Melahirkan Anak",
