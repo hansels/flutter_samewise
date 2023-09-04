@@ -29,7 +29,7 @@ class Activity {
         ? null
         : Activity(
             id: data["id"] ?? "",
-            customer: data["customer"] ?? "",
+            customer: Customer.fromMap(data["customer"]),
             name: data["name"] ?? "",
             description: data["description"] ?? "",
             date: data["date"] ?? "",

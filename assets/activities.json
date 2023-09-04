@@ -1,0 +1,92 @@
+{
+    "activities": [
+        {
+            "name": "Ucapan",
+            "customer": {
+                "name": "Budi Suwanto",
+                "id": "1",
+                "level": 3
+            },
+            "date": "14 Agustus 2023",
+            "description": "Ulang Tahun",
+            "id": "1"
+        },
+        {
+            "name": "Ucapan",
+            "customer": {
+                "name": "Joko Subianto",
+                "id": "2",
+                "level": 2
+            },
+            "date": "15 Agustus 2023",
+            "description": "Selamat Kelahiran Anak",
+            "id": "2"
+        },
+        {
+            "name": "Kirim",
+            "customer": {
+                "name": "Susi Suwan",
+                "id": "3",
+                "level": 2
+            },
+            "date": "15 Agustus 2023",
+            "description": "Parsel atas Kesuksesan membuka toko baru",
+            "id": "3"
+        },
+        {
+            "name": "Ucapan",
+            "customer": {
+                "name": "Rudi Sunarto",
+                "id": "4",
+                "level": 1
+            },
+            "date": "15 Agustus 2023",
+            "description": "Semoga Lekas Sembuh Sakit DBD",
+            "id": "4"
+        },
+        {
+            "name": "Ucapan",
+            "customer": {
+                "name": "Budi Santo",
+                "id": "5",
+                "level": 1
+            },
+            "date": "15 Agustus 2023",
+            "description": "Kelulusan Anak",
+            "id": "5"
+        },
+        {
+            "name": "Kirim",
+            "customer": {
+                "name": "Rita Purba",
+                "id": "6",
+                "level": 1
+            },
+            "date": "15 Agustus 2023",
+            "description": "Parsel Benefit Nasabah",
+            "id": "6"
+        },
+        {
+            "name": "Ucapan",
+            "customer": {
+                "name": "Budi Suwanto",
+                "id": "7",
+                "level": 3
+            },
+            "date": "16 Agustus 2023",
+            "description": "Lekas Sembuh",
+            "id": "7"
+        },
+        {
+            "name": "Ucapan",
+            "customer": {
+                "name": "Joko Subianto",
+                "id": "8",
+                "level": 2
+            },
+            "date": "17 Agustus 2023",
+            "description": "Melahirkan Anak",
+            "id": "8"
+        }
+    ]
+}
