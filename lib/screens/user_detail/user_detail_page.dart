@@ -32,7 +32,6 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
   }
 
   Widget _buildContent() {
-    var length = widget.customer.name.length % Configs.colorAvatars.length;
     var level = widget.customer.level == 3
         ? const Color.fromARGB(255, 255, 215, 0)
         : widget.customer.level == 2
@@ -59,10 +58,13 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                     ),
                     child: Stack(
                       children: [
-                        Image.asset(
-                          "assets/placholder_person.jpg",
-                          color: Configs.colorAvatars[length],
-                          colorBlendMode: BlendMode.hue,
+                        ClipRRect(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(99999),
+                          ),
+                          child: Image.asset(
+                            "assets/${widget.customer.id}.png",
+                          ),
                         ),
                         Positioned(
                           bottom: 0,
@@ -87,8 +89,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
               ),
             ),
           ),
-          const SizedBox(height: 15),
-          ..._buildDivider(),
+          const SizedBox(height: 30),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
@@ -171,7 +172,6 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
             ),
           ),
           const SizedBox(height: 20),
-          ..._buildDivider(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(

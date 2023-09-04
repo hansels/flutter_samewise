@@ -132,17 +132,23 @@ class _HomePageState extends CoreStatefulWidgetState<HomePage> {
                     ),
                   ),
                 ),
-                const CustomText(
-                  textAlign: TextAlign.left,
-                  "Welcome to SameWISE",
-                  fontSize: 24,
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: CustomText(
+                    textAlign: TextAlign.left,
+                    "Welcome to SameWISE",
+                    fontSize: 24,
+                  ),
                 ),
                 Container(
                   height: 8,
                 ),
-                const CustomText(
-                  "Today's List of Activities",
-                  fontSize: 16,
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
+                  child: CustomText(
+                    "Menurut Sam, ini adalah prioritas aktivitasmu minggu ini.",
+                    fontSize: 16,
+                  ),
                 ),
                 Container(
                   height: 12,
@@ -152,8 +158,6 @@ class _HomePageState extends CoreStatefulWidgetState<HomePage> {
                   itemCount: activities.length,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, i) {
-                    var length = (activities[i].customer?.name.length ?? 0) %
-                        Configs.colorAvatars.length;
                     var level = activities[i].customer?.level == 3
                         ? const Color.fromARGB(255, 255, 215, 0)
                         : activities[i].customer?.level == 2
@@ -180,10 +184,13 @@ class _HomePageState extends CoreStatefulWidgetState<HomePage> {
                                 ),
                                 child: Stack(
                                   children: [
-                                    Image.asset(
-                                      "assets/placholder_person.jpg",
-                                      color: Configs.colorAvatars[length],
-                                      colorBlendMode: BlendMode.hue,
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(99999),
+                                      ),
+                                      child: Image.asset(
+                                        "assets/${activities[i].customer!.id}.png",
+                                      ),
                                     ),
                                     Positioned(
                                       bottom: 0,

@@ -78,19 +78,19 @@ class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Container(
-                  height: 10,
-                ),
-                Container(
-                  height: 10,
+                const SizedBox(
+                  height: 20,
                 ),
                 Row(
                   children: [
-                    SizedBox(
-                      height: 150,
-                      child: Image.asset(
-                        "assets/sam.png",
-                        fit: BoxFit.cover,
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: SizedBox(
+                        height: 110,
+                        child: Image.asset(
+                          "assets/sam.png",
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Expanded(
@@ -132,8 +132,6 @@ class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
                   itemCount: customers.length,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, i) {
-                    var length =
-                        customers[i].name.length % Configs.colorAvatars.length;
                     var level = customers[i].level == 3
                         ? const Color.fromARGB(255, 255, 215, 0)
                         : customers[i].level == 2
@@ -159,10 +157,13 @@ class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
                                 ),
                                 child: Stack(
                                   children: [
-                                    Image.asset(
-                                      "assets/placholder_person.jpg",
-                                      color: Configs.colorAvatars[length],
-                                      colorBlendMode: BlendMode.hue,
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.all(
+                                        Radius.circular(99999),
+                                      ),
+                                      child: Image.asset(
+                                        "assets/${customers[i].id}.png",
+                                      ),
                                     ),
                                     Positioned(
                                       bottom: 0,

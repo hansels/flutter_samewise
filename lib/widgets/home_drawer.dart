@@ -27,7 +27,8 @@ class HomeDrawer extends StatelessWidget {
                 ),
                 NormalListTile(
                   leading: const Icon(FontAwesomeIcons.userLarge),
-                  title: const Text("Daftar", style: TextStyle(fontSize: 16.0)),
+                  title: const Text("Customermu",
+                      style: TextStyle(fontSize: 16.0)),
                   onTap: () => getNavigation(context, PageName.UserList),
                   selected: selected == PageName.UserList,
                 ),

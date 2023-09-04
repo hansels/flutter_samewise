@@ -28,11 +28,14 @@ class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
                 ),
                 Row(
                   children: [
-                    SizedBox(
-                      height: 150,
-                      child: Image.asset(
-                        "assets/sam.png",
-                        fit: BoxFit.cover,
+                    Padding(
+                      padding: const EdgeInsets.all(30.0),
+                      child: SizedBox(
+                        height: 110,
+                        child: Image.asset(
+                          "assets/sam.png",
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Expanded(
