@@ -213,18 +213,21 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                     IconButton(onPressed: () => {}, icon: const Icon(Icons.add))
                   ],
                 ),
-                Card(
-                  color: Colors.grey[100],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  elevation: 2,
-                  child: Padding(
-                    padding: EdgeInsets.all(15.0),
-                    child: CustomText(
-                      kontent ?? "",
-                      //"1. Beliau memiliki 3 orang anak, benefit untuk anaknya akan sangat membantu bagi beliau.\n\n2. Beliau suka bermain golf.\n\n3. Beliau Selalu menyukai Titleist.\n\n4. CEO tidak suka dibuang waktu, jangan bertele-tele.\n\n5. Sebagai CEO, beliau tidak memiliki banyak waktu, penawaran yang membantu mempercepat proses transaksi.",
-                      fontSize: 14,
+                SizedBox(
+                  width: double.infinity,
+                  child: Card(
+                    color: Colors.grey[100],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    elevation: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: CustomText(
+                        kontent ?? "",
+                        //"1. Beliau memiliki 3 orang anak, benefit untuk anaknya akan sangat membantu bagi beliau.\n\n2. Beliau suka bermain golf.\n\n3. Beliau Selalu menyukai Titleist.\n\n4. CEO tidak suka dibuang waktu, jangan bertele-tele.\n\n5. Sebagai CEO, beliau tidak memiliki banyak waktu, penawaran yang membantu mempercepat proses transaksi.",
+                        fontSize: 14,
+                      ),
                     ),
                   ),
                 ),
