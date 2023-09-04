@@ -3,6 +3,7 @@ import 'package:flutter_samewise/basics/widgets/core_stateful_widget.dart';
 import 'package:flutter_samewise/constants/page_name.dart';
 import 'package:flutter_samewise/functions/routes.dart';
 import 'package:flutter_samewise/functions/token_version.dart';
+import 'package:flutter_samewise/helpers/customer_helper.dart';
 import 'package:flutter_samewise/models/customer.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
@@ -10,13 +11,22 @@ class UserListPage extends CoreStatefulWidget {
   const UserListPage({super.key});
 
   @override
-  CoreStatefulWidgetState<UserListPage> createState() => _HomePageState();
+  CoreStatefulWidgetState<UserListPage> createState() => _UserListPageState();
 }
 
-class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
+class _UserListPageState extends CoreStatefulWidgetState<UserListPage> {
+  List<Customer?> customers = [];
+
+  late CustomerHelper customerHelper;
+
+  @override
+  void initState() {
+    customerHelper = CustomerHelper();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Customer?> customers = [];
     return FutureBuilder(
         future: TokenVersion.getCustomers(),
         builder: (context, snapshot) {
@@ -113,7 +123,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
                                       child: Stack(
                                         children: [
                                           ClipRRect(
-                                            borderRadius: BorderRadius.all(
+                                            borderRadius: const BorderRadius.all(
                                               Radius.circular(99999),
                                             ),
                                             child: Image.asset(
@@ -141,18 +151,18 @@ class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
                                         children: [
                                           Container(height: 5),
                                           CustomText(
-                                            "${customers[i]?.name ?? ''}",
+                                            customers[i]?.name ?? '',
                                             fontSize: 15,
                                             fontWeight: FontWeight.bold,
                                           ),
                                           Container(height: 5),
                                           CustomText(
-                                            "${customers[i]?.job ?? ''}",
+                                            customers[i]?.job ?? '',
                                             fontSize: 12,
                                           ),
                                           Container(height: 5),
                                           CustomText(
-                                            "${customers[i]?.birthday ?? ''}",
+                                            customers[i]?.birthday ?? '',
                                             fontSize: 12,
                                           ),
                                           Container(height: 5),

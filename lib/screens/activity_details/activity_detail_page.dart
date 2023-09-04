@@ -4,14 +4,16 @@ import 'package:flutter_samewise/models/activites.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
 class ActivityDetailPage extends CoreStatefulWidget {
-  Activity activity;
-  ActivityDetailPage({required this.activity, super.key});
+  final Activity activity;
+  const ActivityDetailPage({required this.activity, super.key});
 
   @override
-  CoreStatefulWidgetState<ActivityDetailPage> createState() => _HomePageState();
+  CoreStatefulWidgetState<ActivityDetailPage> createState() =>
+      _ActivityDetailPageState();
 }
 
-class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
+class _ActivityDetailPageState
+    extends CoreStatefulWidgetState<ActivityDetailPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

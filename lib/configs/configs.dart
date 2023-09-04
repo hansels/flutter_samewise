@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class Configs {
   static String appName = "SameWISE";
 
+  static String httpLink = "http://47.245.125.109";
+
   //Colors for theme
   static const primaryColor = Color.fromARGB(255, 116, 63, 63);
   static const secondaryColor = Color.fromARGB(255, 255, 255, 255);

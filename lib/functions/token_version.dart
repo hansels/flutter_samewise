@@ -6,7 +6,6 @@ import 'package:flutter_samewise/models/activites.dart';
 import 'package:flutter_samewise/models/customer.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import 'shared_preferences_function.dart';
 

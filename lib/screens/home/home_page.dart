@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_samewise/constants/page_name.dart';
 import 'package:flutter_samewise/functions/routes.dart';
 import 'package:flutter_samewise/functions/token_version.dart';
+import 'package:flutter_samewise/helpers/activity_helper.dart';
 import 'package:flutter_samewise/models/activites.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
@@ -9,11 +10,19 @@ class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   List<Activity?> activities = [];
+
+  late ActivityHelper activityHelper;
+
+  @override
+  void initState() {
+    activityHelper = ActivityHelper();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +105,7 @@ class _HomePageState extends State<HomePage> {
                                       child: Stack(
                                         children: [
                                           ClipRRect(
-                                            borderRadius: BorderRadius.all(
+                                            borderRadius: const BorderRadius.all(
                                               Radius.circular(99999),
                                             ),
                                             child: Image.asset(

@@ -9,10 +9,11 @@ class UserDetailPage extends CoreStatefulWidget {
   Customer customer;
 
   @override
-  CoreStatefulWidgetState<UserDetailPage> createState() => _HomePageState();
+  CoreStatefulWidgetState<UserDetailPage> createState() =>
+      _UserDetailPageState();
 }
 
-class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
+class _UserDetailPageState extends CoreStatefulWidgetState<UserDetailPage> {
   @override
   void initState() {
     super.initState();
@@ -53,7 +54,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                     child: Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.all(
+                          borderRadius: const BorderRadius.all(
                             Radius.circular(99999),
                           ),
                           child: Image.asset(
@@ -108,8 +109,8 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                       children: [
                         Row(
                           children: [
-                            Icon(Icons.email, size: 24),
-                            SizedBox(width: 10),
+                            const Icon(Icons.email, size: 24),
+                            const SizedBox(width: 10),
                             CustomText(
                               widget.customer.email ?? "",
                               fontSize: 16,
@@ -120,8 +121,8 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                         const SizedBox(height: 15),
                         Row(
                           children: [
-                            Icon(Icons.phone, size: 24),
-                            SizedBox(width: 10),
+                            const Icon(Icons.phone, size: 24),
+                            const SizedBox(width: 10),
                             CustomText(
                               widget.customer.telephone ?? "",
                               fontSize: 16,
