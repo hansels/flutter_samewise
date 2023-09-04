@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_samewise/basics/screens/base_screen_with_app_bar.dart';
 import 'package:flutter_samewise/constants/page_name.dart';
+import 'package:flutter_samewise/models/customer.dart';
 import 'package:flutter_samewise/screens/user_detail/user_detail_page.dart';
 
 class UserDetailScreen extends BaseScreenWithAppBar {
-  const UserDetailScreen({super.key})
+  final Customer customer;
+
+  const UserDetailScreen(this.customer, {super.key})
       : super(
           PageName.UserDetail,
           padding: EdgeInsets.zero,
@@ -13,7 +16,9 @@ class UserDetailScreen extends BaseScreenWithAppBar {
 
   @override
   Widget content(BuildContext context) {
-    return const UserDetailPage();
+    return UserDetailPage(
+      customer: customer,
+    );
   }
 
   @override

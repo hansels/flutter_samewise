@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_samewise/basics/screens/base_screen_with_app_bar.dart';
 import 'package:flutter_samewise/constants/page_name.dart';
 import 'package:flutter_samewise/screens/user_list/user_list_page.dart';
+import 'package:flutter_samewise/widgets/home_drawer.dart';
 // import 'package:flutter_samewise/widgets/home_drawer.dart';
 
 class UserListScreen extends BaseScreenWithAppBar {
@@ -20,6 +21,11 @@ class UserListScreen extends BaseScreenWithAppBar {
   @override
   Widget? bottomNavigationBar(BuildContext context) {
     return null;
+  }
+
+  @override
+  Widget? drawer(BuildContext context) {
+    return const HomeDrawer(selected: PageName.UserList);
   }
 
   @override

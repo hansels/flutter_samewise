@@ -3,6 +3,7 @@ import 'package:flutter_samewise/basics/widgets/core_stateful_widget.dart';
 import 'package:flutter_samewise/configs/configs.dart';
 import 'package:flutter_samewise/constants/page_name.dart';
 import 'package:flutter_samewise/functions/routes.dart';
+import 'package:flutter_samewise/models/customer.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
 class UserListPage extends CoreStatefulWidget {
@@ -13,43 +14,56 @@ class UserListPage extends CoreStatefulWidget {
 }
 
 class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
-  List<Map<String, dynamic>> list = [
-    {
-      "person": "Budi Suwanto",
-      "job": "Chief Executive Officer",
-      "birthday": "16 Agustus 1985",
-      "priority": 3
-    },
-    {
-      "person": "Joko Subianto",
-      "job": "Chief Technology Officer",
-      "birthday": "16 Agustus 1981",
-      "priority": 2
-    },
-    {
-      "person": "Hana Bang",
-      "job": "Head of Human Resource",
-      "birthday": "20 Juni 1988",
-      "priority": 2
-    },
-    {
-      "person": "Susi Sunarto",
-      "job": "Lead Developer",
-      "birthday": "05 Juni 1992",
-      "priority": 1
-    },
-    {
-      "person": "Budi Santo",
-      "job": "Team Lead",
-      "birthday": "20 Januari 1998",
-      "priority": 1
-    },
-    {
-      "person": "Rita Purba",
-      "job": "Entrepreneur",
-      "birthday": "16 Juli 1999",
-      "priority": 1
-    },
+  List<Customer> customers = [
+    Customer(
+      name: "Budi Suwanto",
+      id: "1",
+      job: "Chief Executive Officer",
+      birthday: DateTime(1985, 8, 16),
+      level: 3,
+    ),
+    Customer(
+      name: "Joko Subianto",
+      id: "2",
+      job: "Chief Technology Officer",
+      birthday: DateTime(1981, 8, 16),
+      level: 2,
+    ),
+    Customer(
+      name: "Susi Suwan",
+      id: "3",
+      job: "Head of Human Resource",
+      birthday: DateTime(1988, 6, 20),
+      level: 2,
+    ),
+    Customer(
+      name: "Rudi Sunarto",
+      id: "4",
+      job: "Lead Developer",
+      birthday: DateTime(1992, 8, 6),
+      level: 1,
+    ),
+    Customer(
+      name: "Budi Santo",
+      id: "5",
+      job: "Team Lead",
+      birthday: DateTime(1998, 1, 24),
+      level: 1,
+    ),
+    Customer(
+      name: "Rita Purba",
+      id: "6",
+      job: "Entrepreneur",
+      birthday: DateTime(1992, 2, 16),
+      level: 1,
+    ),
+    Customer(
+      name: "Chief",
+      id: "7",
+      job: "Chief Executive Officer",
+      birthday: DateTime(1985, 8, 16),
+      level: 3,
+    ),
   ];
   @override
   Widget build(BuildContext context) {
@@ -115,22 +129,21 @@ class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
                 ),
                 ListView.builder(
                   shrinkWrap: true,
-                  itemCount: list.length,
+                  itemCount: customers.length,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, i) {
                     var length =
-                        list[i]["person"].length % Configs.colorAvatars.length;
-                    var level = list[i]['priority'] == 3
+                        customers[i].name.length % Configs.colorAvatars.length;
+                    var level = customers[i].level == 3
                         ? const Color.fromARGB(255, 255, 215, 0)
-                        : list[i]["priority"] == 2
+                        : customers[i].level == 2
                             ? const Color.fromARGB(255, 192, 192, 192)
                             : Colors.transparent;
                     return InkWell(
                       onTap: () async {
-                        Routes.push(
-                          context,
-                          PageName.UserDetail,
-                        );
+                        Routes.push(context, PageName.UserDetail, arguments: {
+                          "customer": customers[i],
+                        });
                       },
                       child: Card(
                         child: Padding(
@@ -171,18 +184,18 @@ class _HomePageState extends CoreStatefulWidgetState<UserListPage> {
                                   children: [
                                     Container(height: 5),
                                     CustomText(
-                                      "${list[i]['person']}",
+                                      "${customers[i].name}",
                                       fontSize: 15,
                                       fontWeight: FontWeight.bold,
                                     ),
                                     Container(height: 5),
                                     CustomText(
-                                      "${list[i]['job']}",
+                                      "${customers[i].job}",
                                       fontSize: 12,
                                     ),
                                     Container(height: 5),
                                     CustomText(
-                                      "${list[i]['birthday']}",
+                                      "${customers[i].birthday!.day}-${customers[i].birthday!.month}-${customers[i].birthday!.year}",
                                       fontSize: 12,
                                     ),
                                     Container(height: 5),

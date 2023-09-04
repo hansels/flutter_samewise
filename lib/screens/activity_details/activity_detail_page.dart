@@ -67,7 +67,7 @@ class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
                   fontSize: 24,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Card(
                   color: Colors.white70,
@@ -92,7 +92,7 @@ class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 40,
                 ),
                 const CustomText(
                   textAlign: TextAlign.left,
@@ -100,7 +100,7 @@ class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
                   fontSize: 24,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Card(
                   color: Colors.white70,

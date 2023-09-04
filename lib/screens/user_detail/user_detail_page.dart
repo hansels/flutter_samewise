@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_samewise/basics/widgets/core_stateful_widget.dart';
 import 'package:flutter_samewise/configs/configs.dart';
+import 'package:flutter_samewise/models/customer.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
 class UserDetailPage extends CoreStatefulWidget {
-  const UserDetailPage({super.key});
+  UserDetailPage({super.key, required this.customer});
+
+  Customer customer;
 
   @override
   CoreStatefulWidgetState<UserDetailPage> createState() => _HomePageState();
 }
 
 class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
-  Map<String, dynamic> data = {
-    "person": "Budi Suwanto",
-    "job": "Chief Executive Officer",
-    "birthday": "16 Agustus 1985",
-    "priority": 3
-  };
+  // Map<String, dynamic> data = {
+  //   "person": "Budi Suwanto",
+  //   "job": "Chief Executive Officer",
+  //   "birthday": "16 Agustus 1985",
+  //   "priority": 3,
+  // };
 
   @override
   void initState() {
@@ -29,10 +32,10 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
   }
 
   Widget _buildContent() {
-    var length = data["person"].length % Configs.colorAvatars.length;
-    var level = data['priority'] == 3
+    var length = widget.customer.name.length % Configs.colorAvatars.length;
+    var level = widget.customer.level == 3
         ? const Color.fromARGB(255, 255, 215, 0)
-        : data["priority"] == 2
+        : widget.customer.level == 2
             ? const Color.fromARGB(255, 192, 192, 192)
             : Colors.transparent;
 
@@ -75,7 +78,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                   ),
                   const SizedBox(height: 15),
                   CustomText(
-                    data["person"],
+                    widget.customer.name,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     textAlign: TextAlign.center,
@@ -96,7 +99,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                 const CustomText(
                   "Data Pribadi",
                   fontSize: 22,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w700,
                 ),
                 Card(
                   color: Colors.grey[100],
@@ -138,7 +141,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                             const SizedBox(width: 10),
                             Expanded(
                               child: CustomText(
-                                data["birthday"],
+                                "${widget.customer.birthday!.day}-${widget.customer.birthday!.month}-${widget.customer.birthday!.year}",
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -182,7 +185,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                       child: CustomText(
                         "Catatan Kolega",
                         fontSize: 22,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w700,
                       ),
                     ),
                     IconButton(onPressed: () => {}, icon: const Icon(Icons.add))
@@ -197,7 +200,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                   child: const Padding(
                     padding: EdgeInsets.all(15.0),
                     child: CustomText(
-                      "1. Beliau memiliki 3 orang anak, sehingga jika diberikan bonus yang dapat membantu mengurus anaknya akan sangat membantu bagi beliau.\n\n2. Beliau suka bermain golf\n\n3. Sebagai CEO, beliau tidak memiliki banyak waktu, maka berikan penawaran yang membantu beliau mempercepat kesulitan kesulitan dalam transaksi.",
+                      "1. Beliau memiliki 3 orang anak, benefit untuk anaknya akan sangat membantu bagi beliau.\n\n2. Beliau suka bermain golf.\n\n3. Beliau Selalu menyukai Titleist.\n\n4. CEO tidak suka dibuang waktu, jangan bertele-tele.\n\n5. Sebagai CEO, beliau tidak memiliki banyak waktu, penawaran yang membantu mempercepat proses transaksi.",
                       fontSize: 14,
                     ),
                   ),

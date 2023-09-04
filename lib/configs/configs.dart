@@ -4,8 +4,8 @@ class Configs {
   static String appName = "SameWISE";
 
   //Colors for theme
-  static const primaryColor = Color.fromRGBO(36, 35, 94, 1);
-  static const secondaryColor = Color.fromRGBO(244, 135, 32, 1);
+  static const primaryColor = Color.fromARGB(255, 116, 63, 63);
+  static const secondaryColor = Color.fromARGB(255, 255, 255, 255);
   static const tertiaryColor = Color.fromRGBO(87, 80, 145, 1);
   static const quaternaryColor = Color.fromRGBO(0, 0, 47, 1);
   static const pentiaryColor = Color.fromRGBO(181, 84, 0, 1);
