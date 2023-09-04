@@ -142,7 +142,7 @@ class _HomePageState extends CoreStatefulWidgetState<UserDetailPage> {
                             const SizedBox(width: 10),
                             Expanded(
                               child: CustomText(
-                                "${widget.customer.birthday!.day}-${widget.customer.birthday!.month}-${widget.customer.birthday!.year}",
+                                "${widget.customer.birthday}",
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                               ),

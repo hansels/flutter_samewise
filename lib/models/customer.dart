@@ -2,7 +2,7 @@ class Customer {
   final String? id;
   String name;
   String? job;
-  DateTime? birthday;
+  String? birthday;
   int? level;
 
   Customer({

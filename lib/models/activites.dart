@@ -4,7 +4,7 @@ class Activity {
   final String? id;
   String name;
   String? description;
-  DateTime? date;
+  String? date;
   Customer? customer;
 
   Activity({

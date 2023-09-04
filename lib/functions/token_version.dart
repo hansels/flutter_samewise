@@ -1,10 +1,12 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_samewise/constants/font_size.dart';
 import 'package:flutter_samewise/functions/enum_parser.dart';
 import 'package:flutter_samewise/models/activites.dart';
 import 'package:flutter_samewise/models/customer.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'shared_preferences_function.dart';
 
@@ -90,30 +92,37 @@ class TokenVersion {
     return instance._token ?? "";
   }
 
-  static Future<List<Activity?>> getActivities() async {
+  static Future<Map<String, dynamic>> loadJsonFromAssets(
+      String filePath) async {
+    String jsonString = await rootBundle.loadString(filePath);
+    return jsonDecode(jsonString);
+  }
+
+  static Future<List<Activity?>?> getActivities() async {
     var act = await instance._sharedPreferencesHelper.getValue('activities');
     if (act == null) {
-      var file = await File('assets/activities.json').readAsString();
-      jsonEncode(file);
+      var file = await loadJsonFromAssets('assets/activities.json');
+      instance._sharedPreferencesHelper
+          .setStringValue('activities', jsonEncode(file['activities']));
     }
-    instance.activites ??= (jsonDecode(
-            await instance._sharedPreferencesHelper.getValue('activities') ??
-                "") as List<Map<String, dynamic>>)
-        .map((e) => Activity.fromMap(e))
-        .toList();
+    var read = (jsonDecode(
+        await instance._sharedPreferencesHelper.getValue('activities') ??
+            "") as List<dynamic>);
+    instance.activites ??= read.map((e) => Activity.fromMap(e)).toList();
     return instance.activites ?? [];
   }
 
   static Future<List<Customer?>> getCustomers() async {
-    if (instance._sharedPreferencesHelper.getValue('customers') == null) {
-      var file = await File('assets/customers.json').readAsString();
-      jsonEncode(file);
+    var act = await instance._sharedPreferencesHelper.getValue('activities');
+    if (act == null) {
+      var file = await loadJsonFromAssets('assets/customers.json');
+      instance._sharedPreferencesHelper
+          .setStringValue('customers', jsonEncode(file['customers']));
     }
-    instance.customers ??= (jsonDecode(
-            await instance._sharedPreferencesHelper.getValue('customers') ??
-                "") as List<Map<String, dynamic>>)
-        .map((e) => Customer.fromMap(e))
-        .toList();
+    var read = (jsonDecode(
+            await instance._sharedPreferencesHelper.getValue('customers') ?? "")
+        as List<dynamic>);
+    instance.customers ??= read.map((e) => Customer.fromMap(e)).toList();
     return instance.customers ?? [];
   }
 
