@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_samewise/basics/widgets/core_stateful_widget.dart';
+import 'package:flutter_samewise/models/activites.dart';
 import 'package:flutter_samewise/widgets/custom/custom_text.dart';
 
 class ActivityDetailPage extends CoreStatefulWidget {
-  const ActivityDetailPage({super.key});
+  Activity activity;
+  ActivityDetailPage({required this.activity, super.key});
 
   @override
   CoreStatefulWidgetState<ActivityDetailPage> createState() => _HomePageState();
@@ -50,10 +52,10 @@ class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
                             ),
                             color: Color.fromARGB(255, 116, 63, 63),
                           ),
-                          child: const Padding(
-                            padding: EdgeInsets.all(12),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12),
                             child: CustomText(
-                              "Menurut Sam, berikut merupakan beberapa poin untuk Ulang Tahun Budi Suwanto.",
+                              "Menurut Sam, berikut merupakan beberapa poin untuk ${widget.activity.name} ${widget.activity.description} ${widget.activity.customer!.name}.",
                               color: Colors.white,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
@@ -83,8 +85,8 @@ class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
                         Container(
                           height: 8,
                         ),
-                        const CustomText(
-                          "Dear Budi,\n\nWishing you a fantastic 38th birthday filled with joy, laughter, and unforgettable moments! As you celebrate another year of life, may it bring you new adventures, cherished memories, and continued success.\n\nYour journey so far has been remarkable, and we are proud to have you as a valuable member of our team. Your dedication, hard work, and positive energy inspire us all. May this new year ahead be filled with exciting opportunities and accomplishments that exceed even your wildest dreams.\n\nTake some time today to pamper yourself, indulge in your favorite treats, and bask in the love and warmth of your friends and family. You deserve all the happiness and success that life has to offer.\n\nHappy birthday once again, Budi! Here's to an amazing year ahead and many more to come.\n\nWarmest wishes",
+                        CustomText(
+                          widget.activity.message ?? '',
                           fontSize: 14,
                         ),
                         Container(
@@ -116,8 +118,8 @@ class _HomePageState extends CoreStatefulWidgetState<ActivityDetailPage> {
                         Container(
                           height: 8,
                         ),
-                        const CustomText(
-                          "Berikut Beberapa Benefit yang mungkin cocok untuk Budi:\n\n1. Gift Card : Gift Card untuk Budi merayakan pesta ulang tahunnya bersama keluarga mungkin dapat menjadi pertimbangan untuk benefit yang layak\n\n2. Personalized Gifts : Dengan melihat sejarah Budi, karena Budi memiliki hobi bermain tennis, hadiah berupa raket tennis merk Wilson, ataupun seperangkat alat tenis (raket dan bola) dapat diberikan kepada Budi.",
+                        CustomText(
+                          widget.activity.benefits ?? "",
                           fontSize: 14,
                         ),
                         Container(

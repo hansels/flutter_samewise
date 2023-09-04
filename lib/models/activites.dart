@@ -5,6 +5,8 @@ class Activity {
   String name;
   String? description;
   String? date;
+  String? message;
+  String? benefits;
   Customer? customer;
 
   Activity({
@@ -13,6 +15,8 @@ class Activity {
     required this.name,
     this.description = "",
     this.date,
+    this.message,
+    this.benefits,
   });
 
   Activity.copy(Activity tenant)
@@ -22,6 +26,8 @@ class Activity {
           name: tenant.name,
           description: tenant.description,
           date: tenant.date,
+          message: tenant.message,
+          benefits: tenant.benefits,
         );
 
   static Activity? fromMap(Map<String, dynamic>? data) {
@@ -33,6 +39,8 @@ class Activity {
             name: data["name"] ?? "",
             description: data["description"] ?? "",
             date: data["date"] ?? "",
+            message: data["message"] ?? "",
+            benefits: data["benefits"] ?? "",
           );
   }
 

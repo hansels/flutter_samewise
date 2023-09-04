@@ -78,10 +78,8 @@ class _HomePageState extends State<HomePage> {
                                   : Colors.transparent;
                           return InkWell(
                             onTap: () async {
-                              Routes.push(
-                                context,
-                                PageName.ActivityDetail,
-                              );
+                              Routes.push(context, PageName.ActivityDetail,
+                                  arguments: {"activity": activities[i]});
                             },
                             child: Card(
                               child: Padding(
